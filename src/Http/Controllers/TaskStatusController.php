@@ -2,8 +2,8 @@
 
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreTaskStatusRequest;
-use App\Http\Requests\UpdateTaskStatusRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreTaskStatusRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateTaskStatusRequest;
 use Puikepixels\PuikCrmCore\Models\TaskStatus;
 
 class TaskStatusController extends Controller

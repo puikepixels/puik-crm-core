@@ -2,8 +2,8 @@
 
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreCustomerGroupRequest;
-use App\Http\Requests\UpdateCustomerGroupRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreCustomerGroupRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateCustomerGroupRequest;
 use Puikepixels\PuikCrmCore\Models\CustomerGroup;
 
 class CustomerGroupController extends Controller

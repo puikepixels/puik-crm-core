@@ -2,8 +2,8 @@
 
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreCustomerNoteRequest;
-use App\Http\Requests\UpdateCustomerNoteRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreCustomerNoteRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateCustomerNoteRequest;
 use Puikepixels\PuikCrmCore\Models\CustomerNote;
 
 class CustomerNoteController extends Controller

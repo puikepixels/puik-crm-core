@@ -1,8 +1,8 @@
 <?php
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreCustomerRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateCustomerRequest;
 use Puikepixels\PuikCrmCore\Models\Customer;
 
 class CustomerController extends Controller

@@ -2,8 +2,8 @@
 
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreTaskPriorityRequest;
-use App\Http\Requests\UpdateTaskPriorityRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreTaskPriorityRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateTaskPriorityRequest;
 use Puikepixels\PuikCrmCore\Models\TaskPriority;
 
 class TaskPriorityController extends Controller

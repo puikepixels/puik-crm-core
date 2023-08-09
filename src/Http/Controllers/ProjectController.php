@@ -2,8 +2,8 @@
 
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
-use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\StoreProjectRequest;
+use Puikepixels\PuikCrmCore\Http\Requests\UpdateProjectRequest;
 use Puikepixels\PuikCrmCore\Models\Project;
 
 class ProjectController extends Controller
