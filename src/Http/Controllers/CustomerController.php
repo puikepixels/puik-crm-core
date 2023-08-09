@@ -1,9 +1,11 @@
 <?php
+
 namespace Puikepixels\PuikCrmCore\Http\Controllers;
 
 use Puikepixels\PuikCrmCore\Http\Requests\StoreCustomerRequest;
 use Puikepixels\PuikCrmCore\Http\Requests\UpdateCustomerRequest;
 use Puikepixels\PuikCrmCore\Models\Customer;
+use Puikepixels\PuikCrmCore\Models\CustomerGroup;
 
 class CustomerController extends Controller
 {
@@ -18,8 +20,7 @@ class CustomerController extends Controller
 
         $model = 'customer';
 
-        return view('customers.index',compact('data', 'model'));
-        
+        return view('customers.index', compact('data', 'model'));
     }
 
     /**
@@ -27,7 +28,11 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Customer::class);
+
+        $customergroups = CustomerGroup::all();
+
+        return view('customers.create', compact('customergroups'));
     }
 
     /**
@@ -35,7 +40,11 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
-        //
+        $this->authorize('create', Customer::class);
+
+        Customer::create(array_merge($request->all(), ['customer_number' => Customer::max('customer_number') + 1]));
+
+        return redirect()->route('customers.index')->with('success', 'customer has been created successfully.');
     }
 
     /**
@@ -43,23 +52,26 @@ class CustomerController extends Controller
      */
     public function show(int $id)
     {
-
-
-        $item = Customer::with(['tasks', 'projects','customerNotes' ])->findOrFail($id);
+        $item = Customer::with(['tasks', 'projects', 'customerNotes'])->findOrFail($id);
         $this->authorize('view', $item);
 
         $model = strtolower((new \ReflectionClass($item))->getShortName());
-       
-        return view('customers.show',compact('item', 'model'));
+
+        return view('customers.show', compact('item', 'model'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id)
+    public function edit(Customer $customer)
     {
-        $item = Customer::with(['tasks', 'projects','customerNotes' ])->findOrFail($id);
-        return view('customers.edit',compact('item'));
+        $this->authorize('edit', $customer);
+
+        $customergroups = CustomerGroup::all();
+
+        $item = $customer;
+
+        return view('customers.edit', compact('item', 'customergroups'));
     }
 
     /**
@@ -67,7 +79,9 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        //
+        $customer->update($request->post());
+
+        return redirect()->route('customers.index')->with('success', 'Customer Has Been updated successfully');
     }
 
     /**

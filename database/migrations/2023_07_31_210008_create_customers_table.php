@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('vatnumber')->nullable();
             $table->string('iban')->nullable();
-            $table->integer('customer_number')->unique();
+            $table->biginteger('customer_number')->unique();
             $table->string('chamberofcommercenumber')->nullable();
             $table->integer('status')->default(1);
             $table->softDeletes();
