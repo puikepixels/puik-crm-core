@@ -1,0 +1,54 @@
+{
+    "name": "puikepixels/puik-crm-core",
+    "description": "Core module for Puik CRM",
+    "keywords": [
+        "puikepixels",
+        "puik-crm-core"
+    ],
+    "homepage": "https://github.com/puikepixels/puik-crm-core",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bram Wientjes",
+            "email": "bram@puikepixels.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Puikepixels\\PuikCrmCore\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Puikepixels\\PuikCrmCore\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Puikepixels\\PuikCrmCore\\PuikCrmCoreServiceProvider"
+            ],
+            "aliases": {
+                "PuikCrmCore": "Puikepixels\\PuikCrmCore\\PuikCrmCoreFacade"
+            }
+        }
+    }
+}
