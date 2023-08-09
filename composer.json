@@ -18,7 +18,9 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^10.0"
+        "illuminate/support": "^10.0",
+        "spatie/laravel-activitylog": "^4.7",
+        "spatie/laravel-permission": "^5.10"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
