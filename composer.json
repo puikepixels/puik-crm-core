@@ -3,7 +3,8 @@
     "description": "Core module for Puik CRM",
     "keywords": [
         "puikepixels",
-        "puik-crm-core"
+        "puik-crm-core",
+        "crm"
     ],
     "homepage": "https://github.com/puikepixels/puik-crm-core",
     "license": "MIT",
