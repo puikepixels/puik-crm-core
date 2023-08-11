@@ -1,0 +1,44 @@
+<?php
+
+namespace Puikepixels\PuikCrmCore\View\Components\form;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class input extends Component
+{
+    public string $name;
+    public $label;
+    public bool $required;
+    public $type;
+    public $placeholder;
+    public $value;
+
+    public function __construct(
+        $name,
+        $label,
+        $placeholder = "",
+        $required = false,
+        $type = "text",
+        $value = null
+    ) {
+        $this->name = $name;
+        $this->label = $label;
+        $this->placeholder = $placeholder;
+        $this->required = $required;
+        $this->type = $type;
+        $this->value = $value;
+
+    }
+
+
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
+    {
+        return view('puik-crm-core::Components.form.input');
+    }
+}
