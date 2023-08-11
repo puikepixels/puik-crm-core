@@ -3,6 +3,8 @@
 namespace Puikepixels\PuikCrmCore;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Puikepixels\PuikCrmCore\View\Components\PuikCrmAppLayout;
 
 class PuikCrmCoreServiceProvider extends ServiceProvider
 {
@@ -16,7 +18,12 @@ class PuikCrmCoreServiceProvider extends ServiceProvider
          */
 
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'puik-crm-core');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'puik-crm-core');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'puik-crm-core');
+
+        Blade::component('crm-layout', PuikCrmAppLayout::class);
+        // Blade::component('puikepage::layouts.guest', 'guest-backend-layout');
+
+
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
@@ -26,9 +33,9 @@ class PuikCrmCoreServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/puik-crm-core'),
-            ], 'views');*/
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([

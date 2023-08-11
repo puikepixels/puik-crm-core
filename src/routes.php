@@ -47,7 +47,7 @@ Route::middleware([
 
 
     Route::get('/settings', function () {
-        return view('settings');
+        return view('puik-crm-core::settings');
     })->name('settings');
 
 

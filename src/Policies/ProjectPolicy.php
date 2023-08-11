@@ -2,7 +2,7 @@
 namespace Puikepixels\PuikCrmCore\Policies;
 
 use Puikepixels\PuikCrmCore\Models\Project;
-use App\Models\User
+use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class ProjectPolicy
@@ -12,7 +12,7 @@ class ProjectPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasPermissionTo('projects:index');
+        return $user->hasPermissionTo('project:index');
     }
 
     /**
@@ -20,7 +20,7 @@ class ProjectPolicy
      */
     public function view(User $user, Project $project): bool
     {
-        return $user->hasPermissionTo('projects:index');
+        return $user->hasPermissionTo('project:index');
     }
 
     /**
@@ -28,7 +28,7 @@ class ProjectPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasPermissionTo('projects:create');
+        return $user->hasPermissionTo('project:create');
     }
 
     /**
@@ -36,7 +36,7 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project): bool
     {
-        return $user->hasPermissionTo('projects:edit');
+        return $user->hasPermissionTo('project:edit');
     }
 
     /**
@@ -44,7 +44,7 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project): bool
     {
-        return $user->hasPermissionTo('projects:delete');
+        return $user->hasPermissionTo('project:delete');
     }
 
     /**
@@ -52,7 +52,7 @@ class ProjectPolicy
      */
     public function restore(User $user, Project $project): bool
     {
-        return $user->hasPermissionTo('customergroup:delete');
+        return $user->hasPermissionTo('project:delete');
     }
 
     /**
@@ -60,6 +60,6 @@ class ProjectPolicy
      */
     public function forceDelete(User $user, Project $project): bool
     {
-        return $user->hasPermissionTo('customergroup:delete');
+        return $user->hasPermissionTo('project:delete');
     }
 }

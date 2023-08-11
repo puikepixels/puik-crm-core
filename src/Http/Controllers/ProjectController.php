@@ -19,7 +19,7 @@ class ProjectController extends Controller
 
         $model = 'project';
 
-        return view('projects.index',compact('data', 'model'));
+        return view('puik-crm-core::projects.index',compact('data', 'model'));
     }
 
     /**

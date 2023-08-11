@@ -18,7 +18,7 @@ class CustomerGroupController extends Controller
 
         $model = 'customergroup';
 
-        return view('customergroups.index', compact('data', 'model'));
+        return view('puik-crm-core::customergroups.index', compact('data', 'model'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CustomerGroupController extends Controller
     public function create()
     {
         $this->authorize('create', CustomerGroup::class);
-        return view('customergroups.create');
+        return view('puik-crm-core::customergroups.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class CustomerGroupController extends Controller
 
         $model = 'customergroup';
        
-        return view('customergroups.show',compact('item', 'model'));
+        return view('puik-crm-core::customergroups.show',compact('item', 'model'));
     }
 
     /**
@@ -59,7 +59,7 @@ class CustomerGroupController extends Controller
     {
         $this->authorize('edit', $customergroup);
         $item = $customergroup;
-        return view('customergroups.edit', compact('item'));
+        return view('puik-crm-core::customergroups.edit', compact('item'));
     }
 
     /**

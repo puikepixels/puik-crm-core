@@ -19,7 +19,7 @@ class TaskController extends Controller
 
         $model = 'task';
 
-        return view('tasks.index',compact('data', 'model'));
+        return view('puik-crm-core::tasks.index',compact('data', 'model'));
     }
 
     /**

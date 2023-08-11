@@ -19,7 +19,7 @@ class TaskPriorityController extends Controller
 
         $model = 'taskprioritie';
 
-        return view('taskpriorities.index',compact('data', 'model'));
+        return view('puik-crm-core::taskpriorities.index',compact('data', 'model'));
     }
 
     /**
@@ -28,7 +28,7 @@ class TaskPriorityController extends Controller
     public function create()
     {
         $this->authorize('create', TaskStatus::class);
-        return view('taskpriorities.create');
+        return view('puik-crm-core::taskpriorities.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class TaskPriorityController extends Controller
 
         $model = 'taskprioritie';
        
-        return view('taskpriorities.show',compact('item', 'model'));
+        return view('puik-crm-core::taskpriorities.show',compact('item', 'model'));
     }
 
     /**
@@ -60,7 +60,7 @@ class TaskPriorityController extends Controller
     {
         $this->authorize('edit', $taskpriority);
         $item = $taskpriority;
-        return view('taskpriorities.edit', compact('item'));
+        return view('puik-crm-core::taskpriorities.edit', compact('item'));
     }
 
     /**

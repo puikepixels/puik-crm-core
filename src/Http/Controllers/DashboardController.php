@@ -18,6 +18,6 @@ class DashboardController extends Controller
         $taskCount = Task::count();
         $projectCount = Project::count();
 
-        return view('dashboard',compact('customerCount', 'taskCount', 'projectCount'));       
+        return view('puik-crm-core::dashboard',compact('customerCount', 'taskCount', 'projectCount'));       
     } 
 }

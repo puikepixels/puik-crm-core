@@ -2,7 +2,7 @@
 namespace Puikepixels\PuikCrmCore\Policies;
 
 use Puikepixels\PuikCrmCore\Models\Customer;
-use App\Models\User
+use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class CustomerPolicy

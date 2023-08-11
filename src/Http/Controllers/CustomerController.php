@@ -20,7 +20,7 @@ class CustomerController extends Controller
 
         $model = 'customer';
 
-        return view('customers.index', compact('data', 'model'));
+        return view('puik-crm-core::customers.index', compact('data', 'model'));
     }
 
     /**
@@ -32,7 +32,7 @@ class CustomerController extends Controller
 
         $customergroups = CustomerGroup::all();
 
-        return view('customers.create', compact('customergroups'));
+        return view('puik-crm-core::customers.create', compact('customergroups'));
     }
 
     /**
@@ -57,7 +57,7 @@ class CustomerController extends Controller
 
         $model = strtolower((new \ReflectionClass($item))->getShortName());
 
-        return view('customers.show', compact('item', 'model'));
+        return view('puik-crm-core::customers.show', compact('item', 'model'));
     }
 
     /**
@@ -71,7 +71,7 @@ class CustomerController extends Controller
 
         $item = $customer;
 
-        return view('customers.edit', compact('item', 'customergroups'));
+        return view('puik-crm-core::customers.edit', compact('item', 'customergroups'));
     }
 
     /**

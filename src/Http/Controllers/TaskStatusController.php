@@ -19,7 +19,7 @@ class TaskStatusController extends Controller
 
         $model = 'taskstatuse';
 
-        return view('taskstatuses.index',compact('data', 'model'));
+        return view('puik-crm-core::taskstatuses.index',compact('data', 'model'));
     }
 
     /**
@@ -28,7 +28,7 @@ class TaskStatusController extends Controller
     public function create()
     {
         $this->authorize('create', TaskStatus::class);
-        return view('taskstatuses.create');
+        return view('puik-crm-core::taskstatuses.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class TaskStatusController extends Controller
 
         $model = 'taskstatuse';
        
-        return view('taskstatuses.show',compact('item', 'model'));
+        return view('puik-crm-core::taskstatuses.show',compact('item', 'model'));
     }
 
     /**
@@ -60,7 +60,7 @@ class TaskStatusController extends Controller
     {
         $this->authorize('edit', $taskstatus);
         $item = $taskstatus;
-        return view('taskstatuses.edit', compact('item'));
+        return view('puik-crm-core::taskstatuses.edit', compact('item'));
     }
 
     /**
