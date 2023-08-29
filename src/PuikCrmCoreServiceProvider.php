@@ -45,9 +45,22 @@ class PuikCrmCoreServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
+            // php artisan vendor:publish --tag=crm-views  --force
             $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/puik-crm-core'),
-            ], 'views');
+            ], 'crm-views');
+
+            // Publishing Seeder.
+            // php artisan vendor:publish --tag=crm-seeder  --force
+            $this->publishes([
+                __DIR__.'/../database/seeders' => database_path('seeders'),
+            ], 'crm-seeder');
+
+            // php artisan vendor:publish --tag=crm-factory  --force
+            $this->publishes([
+                __DIR__.'/../database/factories' => database_path('factories'),
+            ], 'crm-factory');
+
 
             // Publishing assets.
             /*$this->publishes([

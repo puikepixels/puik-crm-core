@@ -1,14 +1,14 @@
 <?php
 namespace Puikepixels\PuikCrmCore\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Puikepixels\PuikCrmCore\Traits\HasPackageFactory;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class TaskStatus extends Model
 {
-    use HasFactory;
+    use HasPackageFactory;
     use LogsActivity;
 
     protected $fillable = ['title'];

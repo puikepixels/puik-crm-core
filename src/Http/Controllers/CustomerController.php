@@ -65,7 +65,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        $this->authorize('edit', $customer);
+        $this->authorize('update', $customer);
 
         $customergroups = CustomerGroup::all();
 
